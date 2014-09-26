@@ -1,7 +1,7 @@
 Package.describe({
   name: "wolves:neat",
   summary: "Meteor 0.9.x - A lightweight, semantic grid framework built on top of Bourbon.",
-  version: "0.3.0",
+  version: "0.4.0",
   git: "https://github.com/wolvesio/meteor-neat"
 });
 
@@ -17,7 +17,8 @@ Package.onUse(function(api) {
     "functions/_private.scss",
     // Grid
     "grid/_private.scss",
-    "grid/_box-sizing.scss",
+    "grid/_reset.scss",
+    "grid/_grid.scss",
     "grid/_omega.scss",
     "grid/_outer-container.scss",
     "grid/_span-columns.scss",
@@ -28,10 +29,7 @@ Package.onUse(function(api) {
     "grid/_media.scss",
     "grid/_to-deprecate.scss",
     "grid/_visual-grid.scss",
-    "grid/_display.scss",
-    "grid/_direction.scss",
     //Settings
-    "settings/_disable-warnings.scss",
     "settings/_grid.scss",
     "settings/_visual-grid.scss"
   ], 'server', {

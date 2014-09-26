@@ -1,23 +1,30 @@
 // Checks if a number is even
 @function is-even($int) {
-  @return $int % 2 == 0
+  @if $int%2 == 0   {
+    @return true;
+  }
+
+  @return false;
 }
 
-// Checks if an element belongs to a list or not
+// Checks if an element belongs to a list
 @function belongs-to($tested-item, $list) {
-  @return not not-belongs-to($tested-item, $list);
-}
+  @each $item in $list {
+    @if $item == $tested-item {
+      @return true;
+    }
+  }
 
-@function not-belongs-to($tested-item, $list) {
-  @return not index($list, $tested-item);
+  @return false;
 }
 
 // Contains display value
 @function contains-display-value($query) {
-  @return belongs-to(table, $query)
-       or belongs-to(block, $query)
-       or belongs-to(inline-block, $query)
-       or belongs-to(inline, $query);
+  @if belongs-to(table, $query) or belongs-to(block, $query) or belongs-to(inline-block, $query) or belongs-to(inline, $query) {
+    @return true;
+  }
+
+  @return false;
 }
 
 // Parses the first argument of span-columns()
@@ -38,7 +45,7 @@
 }
 
 @function container-shift($shift: $shift) {
-  $parent-columns: $grid-columns !default;
+  $parent-columns: $grid-columns  !default;
 
   @if length($shift) == 3 {
     $container-columns: nth($shift, 3);
@@ -85,7 +92,7 @@
 // Layout direction
 @function get-direction($layout, $default) {
   $direction: nil;
-
+  
   @if $layout == LTR or $layout == RTL {
     $direction: direction-from-layout($layout);
   } @else {
