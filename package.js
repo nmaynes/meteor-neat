@@ -11,7 +11,7 @@ Package.onUse(function(api) {
   api.addFiles([
     "_neat.scss",
     // Helpers
-    "_neat-_helpers.scss",
+    "_neat-helpers.scss",
     // Grid
     "grid/_private.scss",
     "grid/_box-sizing.scss",
