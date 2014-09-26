@@ -76,7 +76,7 @@ First off, if you are planning to override the default grid settings (12 columns
 In your newly created  `_grid-settings.scss`, import `neat-helpers` if you are planning to use `new-breakpoint()`, then define your new variables:
 
 ```scss
-@import ".meteor/local/build/programs/server/assets/packages/wolves_neat/neat_helpers"
+@import ".meteor/local/build/programs/server/assets/packages/wolves_neat/neat-helpers"
 
 // Change the grid settings
 $column: 90px;
