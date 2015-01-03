@@ -1,6 +1,6 @@
 Package.describe({
   name: "wolves:neat",
-  summary: "Meteor 0.9.x - A lightweight, semantic grid framework built on top of Bourbon.",
+  summary: "Meteor 0.9+ - A lightweight, semantic grid framework built on top of Bourbon.",
   version: "0.4.1",
   git: "https://github.com/wolvesio/meteor-neat"
 });
