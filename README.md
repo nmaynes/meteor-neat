@@ -50,8 +50,8 @@ Neat uses the [RubyGems](https://rubygems.org) package manager to easily generat
 1. Simply import Bourbon at the top of your sass file, then import bitters directly after it (*Currently working on configuring a way to provide a far less verbose import command*):
 
   ```scss
-  @import ".meteor/local/build/programs/server/assets/packages/wolves_bourbon/bourbon"
-  @import ".meteor/local/build/programs/server/assets/packages/wolves_neat/neat"
+  @import ".meteor/local/build/programs/server/assets/packages/wolves_bourbon/bourbon";
+  @import ".meteor/local/build/programs/server/assets/packages/wolves_neat/neat";
   ```
 ---
 
@@ -68,9 +68,9 @@ More information can be found in the [wiki](https://github.com/thoughtbot/neat/w
 First off, if you are planning to override the default grid settings (12 columns), it is recommended to create a `_grid-settings.scss` file for that purpose. Make sure to import it right *before* importing Neat:
 
 ```scss
-@import ".meteor/local/build/programs/server/assets/packages/wolves_bourbon/bourbon"
+@import ".meteor/local/build/programs/server/assets/packages/wolves_bourbon/bourbon";
 @import "grid-settings";
-@import ".meteor/local/build/programs/server/assets/packages/wolves_neat/neat"
+@import ".meteor/local/build/programs/server/assets/packages/wolves_neat/neat";
 ```
 
 In your newly created  `_grid-settings.scss`, import `neat-helpers` if you are planning to use `new-breakpoint()`, then define your new variables:
