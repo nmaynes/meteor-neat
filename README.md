@@ -1,8 +1,4 @@
-**Notice: Currently Alpha - Actively Finalizing Issues**
-
-[![Neat](http://neat.bourbon.io/images/logotype.svg)](http://neat.bourbon.io)
-
-***
+[![Neat](http://images.thoughtbot.com/bourbon/neat-logo.svg)](http://neat.bourbon.io)
 
 ## A [Meteor](http://meteor.com) package of [Thoughtbot's](http://thoughtbot.com), Neat.
 
@@ -10,20 +6,11 @@
 
 ---
 
-Neat is a fluid grid framework built on [Bourbon](http://bourbon.io) with the aim of being easy enough to use out of the box and flexible enough to customize down the road.
+[Neat](http://neat.bourbon.io) is a fluid grid framework built on [Bourbon](http://bourbon.io) with the aim of being easy enough to use out of the box and flexible enough to customize down the road.
 
 #### [Documentation & Demo](http://neat.bourbon.io)
 
 #### [Changelog](https://github.com/thoughtbot/neat/releases)
-
-## Requirements
-
-- [Sass](https://github.com/sass/sass) 3.3+
-- [Bourbon](https://github.com/thoughtbot/bourbon) 3.1+
-
-## Installation
-
-Neat uses the [RubyGems](https://rubygems.org) package manager to easily generate a `neat` directory with all of the necessary files.
 
 ##Install
 
@@ -45,21 +32,51 @@ Neat uses the [RubyGems](https://rubygems.org) package manager to easily generat
   meteor add wolves:neat
   ```
 
-##Importing
+4. Create a `scss.json` configuration file in the app's root with:
 
-1. Simply import Bourbon at the top of your sass file, then import bitters directly after it (*Currently working on configuring a way to provide a far less verbose import command*):
-
-  ```scss
-  @import ".meteor/local/build/programs/server/assets/packages/wolves_bourbon/bourbon";
-  @import ".meteor/local/build/programs/server/assets/packages/wolves_neat/neat";
+  ```json
+  {
+    "includePaths": [
+    ".meteor/local/build/programs/server/assets/packages/wolves_bourbon",
+    ".meteor/local/build/programs/server/assets/packages/wolves_neat"
+    ]
+  }
   ```
+
+  **Example of scss.json using full bourbon suite**
+  *(This would be used after installing the `wolves:bitters` & `wolves:neat` packages along with bourbon)*
+  ```json
+  {
+    "includePaths": [
+      ".meteor/local/build/programs/server/assets/packages/wolves_bourbon",
+      ".meteor/local/build/programs/server/assets/packages/wolves_bitters",
+      ".meteor/local/build/programs/server/assets/packages/wolves_neat"
+    ]
+  }
+  ```
+
+##Usage
+
+1. Simply import Bourbon at the top of your sass file, then import neat directly after it
+
+  `*.scss`
+  ```scss
+  @import "bourbon/bourbon";
+  @import "neat/neat";
+  ```
+  `*.sass`
+  ```sass
+  @import bourbon/bourbon
+  @import neat/neat
+  ```
+
 ---
 
-**Important Note** (*working on addressing this*)
+## Important Note
 Because Meteor will attempt to compile you app's local stylesheets prior to copying the server assets directory, the first time you run the app after installing the package your app will complain that it is unable to find it. For the moment this can be resolved by either stopping and restarting the app, at which point you should no longer get this error message, our running `touch` on you local stylesheet thats attempting to access the package, triggering a reload.
 
 
-  It’s not recommended to add or modify the Neat files so that you can update them easily.
+It’s not recommended to add or modify the Neat files so that you can update them easily.
 
 More information can be found in the [wiki](https://github.com/thoughtbot/neat/wiki/Command-Line-Interface).
 
@@ -68,15 +85,15 @@ More information can be found in the [wiki](https://github.com/thoughtbot/neat/w
 First off, if you are planning to override the default grid settings (12 columns), it is recommended to create a `_grid-settings.scss` file for that purpose. Make sure to import it right *before* importing Neat:
 
 ```scss
-@import ".meteor/local/build/programs/server/assets/packages/wolves_bourbon/bourbon";
+@import "bourbon/bourbon";
 @import "grid-settings";
-@import ".meteor/local/build/programs/server/assets/packages/wolves_neat/neat";
+@import "neat/neat";
 ```
 
-In your newly created  `_grid-settings.scss`, import `neat-helpers` if you are planning to use `new-breakpoint()`, then define your new variables:
+In your newly created  `_grid-settings.scss`, import `neat/neat-helpers` if you are planning to use `new-breakpoint()`, then define your new variables:
 
 ```scss
-@import ".meteor/local/build/programs/server/assets/packages/wolves_neat/neat-helpers";
+@import "neat/neat-helpers";
 
 // Change the grid settings
 $column: 90px;
