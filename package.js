@@ -1,38 +1,36 @@
 Package.describe({
   name: "wolves:neat",
-  summary: "Meteor 0.9+ - A lightweight, semantic grid framework built on top of Bourbon.",
-  version: "0.4.1",
+  summary: "Meteor 0.9.3+ - A lightweight, semantic grid framework built on top of Bourbon.",
+  version: "0.9.0",
   git: "https://github.com/wolvesio/meteor-neat"
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('METEOR@0.9.0');
+  api.versionsFrom('METEOR@0.9.3');
   api.use('fourseven:scss@1.0.0');
   api.addFiles([
     // Helpers
-    "_neat-helpers.scss",
+    "neat/_neat-helpers.scss",
     //Functions
-    "functions/_new-breakpoint.scss",
-    "functions/_private.scss",
+    "neat/functions/_new-breakpoint.scss",
+    "neat/functions/_private.scss",
     // Grid
-    "grid/_private.scss",
-    "grid/_reset.scss",
-    "grid/_grid.scss",
-    "grid/_omega.scss",
-    "grid/_outer-container.scss",
-    "grid/_span-columns.scss",
-    "grid/_row.scss",
-    "grid/_shift.scss",
-    "grid/_pad.scss",
-    "grid/_fill-parent.scss",
-    "grid/_media.scss",
-    "grid/_to-deprecate.scss",
-    "grid/_visual-grid.scss",
+    "neat/grid/_private.scss",
+    "neat/grid/_reset.scss",
+    "neat/grid/_grid.scss",
+    "neat/grid/_omega.scss",
+    "neat/grid/_outer-container.scss",
+    "neat/grid/_span-columns.scss",
+    "neat/grid/_row.scss",
+    "neat/grid/_shift.scss",
+    "neat/grid/_pad.scss",
+    "neat/grid/_fill-parent.scss",
+    "neat/grid/_media.scss",
+    "neat/grid/_to-deprecate.scss",
+    "neat/grid/_visual-grid.scss",
     //Settings
-    "settings/_grid.scss",
-    "settings/_visual-grid.scss",
-    "_neat.scss"
-  ], 'server', {
-    isAsset: true
-  });
+    "neat/settings/_grid.scss",
+    "neat/settings/_visual-grid.scss",
+    "neat/_neat.scss"
+  ], 'server', {isAsset: true});
 });
